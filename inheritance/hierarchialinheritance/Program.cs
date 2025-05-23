@@ -21,7 +21,7 @@ class Faculty : Student
 
     }
 }
-class Course : Faculty
+class Course : Student
 {
     public void Subject()
     {
@@ -39,7 +39,6 @@ class Program
         f1.Professor();
         c1.Record();
         c1.Subject();
-        c1.Professor();
 
 
     }
