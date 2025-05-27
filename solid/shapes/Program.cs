@@ -5,28 +5,19 @@ abstract class Shape
 }
 class Rectangle : Shape
 {
-    public virtual int Width{ get; set; }
-    public virtual int Height{ get; set; }
+    public int Width{ get; set; }
+    public int Height{ get; set; }
     public override int Area()
     {
         return Width * Height;
     }
 }
-class Square : Rectangle
+class Square : Shape
 {
-    public override int Width {
-        set
-        {
-            base.Width = value;
-            base.Height = value;
-        }
-    }
-    public override int Height{
-        set
-        {
-            base.Width=value;
-            base.Height=value;
-        }
+    public int Side { get; set; }
+    public override int Area()
+    {
+        return Side * Side;
     }
 }
 class Program
@@ -35,7 +26,7 @@ class Program
     {
         Rectangle r = new Rectangle { Width = 5, Height = 4 };
         Square s = new Square();
-        s.Width = 5;
+        s.Side = 5;
         Console.WriteLine(s.Area());
         Console.WriteLine(r.Area());
     }
